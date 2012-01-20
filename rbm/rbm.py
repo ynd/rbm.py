@@ -23,8 +23,19 @@ import numpy
 
 class RBM(object):
     """
-    A Restricted Boltzmann Machine (RBM) with binary visible units and
-    binary hiddens.
+    Restricted Boltzmann Machine (RBM)
+    
+    A Restricted Boltzmann Machine with binary visible units and
+    binary hiddens. Parameters are estimated using Stochastic Maximum
+    Likelihood (SML).
+    
+    Examples
+    ========
+    
+    >>> import numpy, rbm
+    >>> X = numpy.array([[0, 0, 0], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
+    >>> model = rbm.RBM(n_hiddens=2)
+    >>> model.fit(X)
     """
     def __init__(self, n_hiddens=1024,
                        W=None,
@@ -229,7 +240,7 @@ class RBM(object):
         
         numpy.random.shuffle(inds)
         
-        n_batches = len(inds) / self.n_samples
+        n_batches = int(numpy.ceil(len(inds) / float(self.n_samples)))
         
         for epoch in range(self.epochs):
             for minibatch in range(n_batches):
