@@ -9,8 +9,8 @@ The only dependency is numpy, which is used to perform all
 expensive operations. The code is quite fast, however much better
 performance can be achieved using the Theano version of this code.
 
-Examples
-========
+Example
+-------
 
     >>> import numpy, rbm
     >>> X = numpy.array([[0, 0, 0], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
