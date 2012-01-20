@@ -12,7 +12,8 @@ performance can be achieved using the Theano version of this code.
 Examples
 ========
 
->>> import numpy, rbm
->>> X = numpy.array([[0, 0, 0], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
->>> model = rbm.RBM(n_hiddens=2)
->>> model.fit(X)
+    >>> import numpy, rbm
+    >>> X = numpy.array([[0, 0, 0], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
+    >>> model = rbm.RBM(n_hiddens=2)
+    >>> model.fit(X)
+
