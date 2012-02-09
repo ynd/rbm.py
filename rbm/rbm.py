@@ -190,8 +190,8 @@ class RBM(object):
         v_neg = self.sample_v(self.h_samples)
         h_neg = self.mean_h(v_neg)
         
-        p_pos = v_pos[:, :, numpy.newaxis] * h_pos[:, numpy.newaxis, :]
-        p_neg = v_neg[:, :, numpy.newaxis] * h_neg[:, numpy.newaxis, :]
+        p_pos = v_pos[:, :, None] * h_pos[:, None, :]
+        p_neg = v_neg[:, :, None] * h_neg[:, None, :]
         
         self.W += self.epsilon * (p_pos.mean(0) - p_neg.mean(0))
         self.c += self.epsilon * (h_pos.mean(0) - h_neg.mean(0))
