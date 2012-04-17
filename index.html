@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="rbm.py : Pain-free Restricted Boltzmann Machines" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>rbm.py</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ynd/rbm.py">Fork Me on GitHub</a>
+
+          <h1 id="project_title">rbm.py</h1>
+          <h2 id="project_tagline">Pain-free Restricted Boltzmann Machines</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/ynd/rbm.py/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/ynd/rbm.py/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>Introduction</h3>
+
+<p><em>rbm.py</em> is the fastest and easiest way to use Restricted Boltzmann Machines (RBMs). RBMs are a 
+class of probabilistic models that can discover hidden patterns in your data. <em>rbm.py</em> provides all the necessary methods with a pythonic interface, and moreover, all methods call blazing fast C code. The code can also run transparently on GPU thanks to <a href="http://deeplearning.net/software/theano/">Theano</a>.</p>
+
+<p>Here's an example usage</p>
+
+<pre><code>$ python
+&gt;&gt;&gt; import numpy, rbm
+&gt;&gt;&gt; X = numpy.array([[0, 1, 0], \
+                     [0, 1, 1], \
+                     [1, 0, 1], \
+                     [1, 1, 1]]) # Improvised dataset
+&gt;&gt;&gt; model = rbm.RBM(n_hiddens=2) # RBM with two hiddens units
+&gt;&gt;&gt; model.fit(X) # Train using dataset X
+&gt;&gt;&gt; model.sample_h(X) # Get hidden code
+array([[0, 0],
+       [0, 1],
+       [1, 1],
+       [1, 0]])
+&gt;&gt;&gt; model.gibbs(X) # MCMC step
+array([[0, 1, 1],
+       [1, 0, 1],
+       [0, 0, 1],
+       [1, 0, 1]])
+</code></pre>
+
+<h3>Authors and Contributors</h3>
+
+<p>Yann N. Dauphin (<a href="https://github.com/ynd" class="user-mention">@ynd</a>)</p>
+
+<h3>Support or Contact</h3>
+
+<p>Having trouble? Check out <a href="https://github.com/ynd/rbm.py/issues">https://github.com/ynd/rbm.py/issues</a>.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">rbm.py maintained by <a href="https://github.com/ynd">ynd</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
